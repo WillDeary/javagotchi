@@ -57,6 +57,11 @@ public class Creature {
     public String checkStatus()
     {
         String status = "";
+        if(happiness <=0 || energy <0 || fullness <=0)
+        {
+            System.out.println("Uh Oh" + this.getName() + "Has died! You are a bad owner.");
+            System.exit(0);
+        }
         if(happiness <=6){
             status += "Oh"+ this.getName() + "is very sad \n";
         }
@@ -69,6 +74,8 @@ public class Creature {
         {
             status += "Rumble"+ this.getName() + "is very hungry \n ";
         }
+
+
 
         return status;
     }
